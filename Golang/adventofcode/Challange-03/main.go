@@ -40,3 +40,5 @@ func main() {
 	fmt.Println("depth: ", depth)
 	fmt.Println("Answer: ", horizental*depth)
 }
+
+// PART-ONE https://adventofcode.com/2021/day/2
