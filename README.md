@@ -8,6 +8,8 @@ The purpose of this project is twofold:
 
 Each folder contains the solution for a specific day, structured for readability and learning. Feedback and suggestions are always welcome!
 
+I started with coding challenges for the year 2021.
+
 ## Getting Started
 
 To run a solution:
