@@ -1,41 +1,21 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+	"learn-go-with-adventofcode/helpers"
 	"strconv"
 )
 
 func main() {
-	file, err := os.Open("../data/data.txt")
+	storedInput := helpers.GetInput("../data/data.txt")
 
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-
-	groupCount := 0
 	groupSum := 0
-
-	var storedInput []int
+	groupCount := 0
 	var groupSumInSlice []int
 
-	for scanner.Scan() {
-		line := scanner.Text()
-
-		num, err := strconv.Atoi(line)
-		if err != nil {
-			fmt.Println(err)
-		}
-		storedInput = append(storedInput, num)
-	}
-
 	for outerIndex, _ := range storedInput {
-		for _, num := range storedInput[outerIndex : outerIndex+3] {
+		for _, stringNum := range storedInput[outerIndex : outerIndex+3] {
+			num, _ := strconv.Atoi(stringNum)
 			groupSum = groupSum + num
 			groupCount = groupCount + 1
 
@@ -59,10 +39,6 @@ func main() {
 	}
 
 	fmt.Println("increasedGroupSum: ", increasedGroupSum)
-
-	if err := scanner.Err(); err != nil {
-		fmt.Println(err)
-	}
 }
 
 // Solution for the second part https://adventofcode.com/2021/day/1

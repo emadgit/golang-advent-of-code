@@ -1,32 +1,19 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
+	"learn-go-with-adventofcode/helpers"
 	"strconv"
 )
 
 func main() {
-	// Open the file
-	file, err := os.Open("../data/data.txt")
-	if err != nil {
-		log.Fatalf("Failed to open file: %v", err)
-	}
-	defer file.Close()
-
-	// Create a scanner to read line by line
-	scanner := bufio.NewScanner(file)
+	storedInput := helpers.GetInput("../data/data.txt")
 
 	prevNum := 0
 	increasedCount := 0
-
 	// Iterate over each line
-	for scanner.Scan() {
-		line := scanner.Text()
-
-		num, err := strconv.Atoi(line)
+	for _, stringValue := range storedInput {
+		num, err := strconv.Atoi(stringValue)
 		if err != nil {
 			fmt.Println("Conversion error:", err)
 			return
@@ -40,9 +27,4 @@ func main() {
 	}
 
 	fmt.Println("Increased count:", increasedCount)
-
-	// Check for scanner errors
-	if err := scanner.Err(); err != nil {
-		log.Fatalf("Error reading file: %v", err)
-	}
 }
