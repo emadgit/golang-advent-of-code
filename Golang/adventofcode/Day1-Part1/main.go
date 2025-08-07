@@ -11,7 +11,6 @@ func main() {
 
 	prevNum := 0
 	increasedCount := 0
-	// Iterate over each line
 	for _, stringValue := range storedInput {
 		num, err := strconv.Atoi(stringValue)
 		if err != nil {
