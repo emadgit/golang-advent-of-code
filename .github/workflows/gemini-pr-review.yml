@@ -14,3 +14,4 @@ jobs:
       - uses: google-github-actions/run-gemini-cli@v0
         with:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+           # Pin the CLI if you like: gemini_cli_version: "0.1.18"
