@@ -19,3 +19,5 @@ go run Day1-Part1/main.go
 ```
 
 Make sure you have Go installed. You can download it from [golang.org](https://golang.org/dl/).
+
+The Input data is within the `data` folder and I tried to creat a util function in `helper` folder to make the input re-usable.
