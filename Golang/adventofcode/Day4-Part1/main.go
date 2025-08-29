@@ -15,6 +15,22 @@ type Board struct {
 	sumUnmarked int
 }
 
+type pos struct{ b, r, c int }
+
+func NewBoard(cells []int) Board {
+	if len(cells) != 25 {
+		panic("cells must have length 25")
+	}
+	sum := 0
+	for _, cell := range cells {
+		sum += cell
+	}
+	return Board{
+		cells:       append([]int(nil), cells...),
+		sumUnmarked: sum,
+	}
+}
+
 func main() {
 	storedInput := helpers.GetInput("../data/day4-data.txt")
 
