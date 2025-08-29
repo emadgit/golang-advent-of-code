@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"learn-go-with-adventofcode/helpers"
+	"strconv"
 	"strings"
 )
 
@@ -19,28 +20,24 @@ func main() {
 
 	drawNumbers := []int{7, 4, 9, 5, 11, 17, 23, 2, 0, 14, 21, 24, 10, 16, 13, 6, 15, 25, 12, 22, 18, 20, 8, 19, 3, 26, 1}
 	fmt.Println(drawNumbers)
-	boards := make([][]string, 3)
-	boards[0] = make([]string, 25)
-	boards[1] = make([]string, 25)
-	boards[2] = make([]string, 25)
 
-	fields := make([]string, 25)
+	joined := strings.Join(storedInput, " ")
+	fields := strings.Fields(joined)
 
-	for _, stringValue := range storedInput {
-		fields = strings.Fields(stringValue)
+	numbers := make([]int, len(fields))
+
+	for i, f := range fields {
+		n, err := strconv.Atoi(f)
+		if err != nil {
+			panic(err)
+		}
+		numbers[i] = n
 	}
 
-	counter := 0
-
-	for i := 0; i < len(boards); i++ {
-		boards[i] = fields[counter : counter+25]
-		counter += 25
+	boards := [][]int{}
+	for i := 0; i < len(numbers); i += 25 {
+		boards = append(boards, numbers[i:i+25])
 	}
 
-	numberOfDraws := len(drawNumbers) / 5
-	fmt.Printf("Number of draws: %d\n", numberOfDraws)
-
-	fmt.Println("boards:", boards)
-	// OKAY! So far we have the boards in right format, now I need to solve it, I CAN DO IT!
-
+	fmt.Println(boards)
 }
