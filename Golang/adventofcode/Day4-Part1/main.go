@@ -6,6 +6,14 @@ import (
 	"strings"
 )
 
+type Board struct {
+	cells       []int
+	marked      [25]bool
+	rowCount    [5]int
+	colCount    [5]int
+	sumUnmarked int
+}
+
 func main() {
 	storedInput := helpers.GetInput("../data/day4-data.txt")
 
@@ -16,7 +24,7 @@ func main() {
 	boards[1] = make([]string, 25)
 	boards[2] = make([]string, 25)
 
-	fields := []string{}
+	fields := make([]string, 25)
 
 	for _, stringValue := range storedInput {
 		fields = strings.Fields(stringValue)
@@ -24,12 +32,15 @@ func main() {
 
 	counter := 0
 
-	for i := 0; i < 3; i++ {
+	for i := 0; i < len(boards); i++ {
 		boards[i] = fields[counter : counter+25]
 		counter += 25
 	}
 
-	fmt.Println(boards)
+	numberOfDraws := len(drawNumbers) / 5
+	fmt.Printf("Number of draws: %d\n", numberOfDraws)
+
+	fmt.Println("boards:", boards)
 	// OKAY! So far we have the boards in right format, now I need to solve it, I CAN DO IT!
 
 }
