@@ -1,6 +1,7 @@
 {
   "name": "linked-list",
   "version": "1.0.0",
+  "type": "module",
   "main": "Remove-k-th-node.js",
   "scripts": {
     "dev": "nodemon Remove-k-th-node.js"
