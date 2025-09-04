@@ -1,0 +1,14 @@
+{
+  "name": "linked-list",
+  "version": "1.0.0",
+  "main": "Remove-k-th-node.js",
+  "scripts": {
+    "dev": "nodemon Remove-k-th-node.js"
+  },
+  "author": "Emad Dehnavi",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
