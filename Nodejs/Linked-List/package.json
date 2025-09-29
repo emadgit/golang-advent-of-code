@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "@emaddehnavi/iban-tools": "^0.1.4"
   }
 }
