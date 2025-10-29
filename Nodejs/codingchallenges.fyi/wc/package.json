@@ -1,0 +1,19 @@
+{
+  "name": "codingchallenges.fyi",
+  "version": "1.0.0",
+  "description": "This folder will contain coding challenges from: https://codingchallenges.fyi/challenges/intro/",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^24.9.2",
+    "commander": "^14.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
